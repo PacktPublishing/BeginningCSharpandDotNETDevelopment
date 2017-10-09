@@ -1,0 +1,29 @@
+> #r "System.Net.Http"
+> using System.Net.Http;
+> var client = new HttpClient();
+> client.BaseAddress = new Uri("http://www.microsoft.com/");
+> var response = await client.GetAsync("about");
+> response.StatusCode
+OK
+> response.Content.Headers.GetValues("Content-Type")
+string[1] { "text/html" }
+> await response.Content.ReadAsStringAsync()
+"<!DOCTYPE html ><html 
+xmlns:mscom="http://schemas.microsoft.com/CMSvNext" 
+xmlns:md="http://schemas.microsoft.com/mscom-data" lang="en" 
+xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="X-UA-
+Compatible" content="IE=edge" /><meta charset="utf-8" /><meta 
+name="viewport" content="width=device-width, initial-scale=1.0" 
+/><link rel="shortcut icon" 
+href="//www.microsoft.com/favicon.ico?v2" /><script 
+type="text/javascript" 
+src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-
+1.7.2.min.js">\r\n // Third party scripts and code linked to 
+or referenced from this website are licensed to you by the parties 
+that own such code, not by Microsoft. See ASP.NET Ajax CDN Terms of 
+Use - http://www.asp.net/ajaxlibrary/CDN.ashx.\r\n 
+</script><script type="text/javascript" 
+language="javascript">/*<![CDATA[*/if($(document).bind("mobileinit
+",function(){$.mobile.autoInitializePage=!1}),navigator.userAgent.ma
+tch(/IEMobile\\/10\\.0/)){var 
+msViewportStyle=document.createElement("style ...
