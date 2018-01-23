@@ -1,0 +1,168 @@
+Exercise: Perform database migration
+
+Server=(localdb)\\mssqllocaldb;Database=aspnet-Ch14_
+WebApp-584f323f-
+a60e-4933-9845-f67225753337;
+Trusted_Connection=True;MultipleActiveResultSets=true
+
+
+    
+
+<div class="row"> 
+      <div class="col-md-12"> 
+        <h1>Northwind</h1> 
+        <p class="lead">We have had @Model.VisitorCount
+           visitors this month.
+        </p> 
+        <h2>Products</h2> 
+        <div id="newspaper"> 
+          <ul> 
+          @foreach (var item in @Model.Products) 
+          { 
+            <li><a asp-controller="Home"  
+                   asp-action="ProductDetail"  
+                   asp-route-id="@item.ProductID"> 
+                @item.ProductName costs  
+                @item.UnitPrice.Value.ToString("C") 
+            </a></li> 
+          } 
+          </ul> 
+        </div> 
+      </div> 
+    </div> 
+
+
+ASP.NET Core Startup
+
+    public void ConfigureServices(IServiceCollection services) 
+    { 
+      // Add framework services. 
+      services.AddDbContext<ApplicationDbContext>(options => 
+        options.UseSqlServer(Configuration 
+        .GetConnectionString("DefaultConnection"))); 
+   
+      services.AddIdentity<ApplicationUser, IdentityRole>() 
+        .AddEntityFrameworkStores<ApplicationDbContext>() 
+        .AddDefaultTokenProviders(); 
+       services.AddMvc(); 
+       // Add application services. 
+      services.AddTransient<IEmailSender, AuthMessageSender>(); 
+      services.AddTransient<ISmsSender, AuthMessageSender>(); 
+    } 
+
+
+    public void Configure(IApplicationBuilder app,  
+      IHostingEnvironment env, ILoggerFactory 
+      loggerFactory) 
+      { 
+         loggerFactory.AddConsole(Configuration.GetSection(
+         "Logging")); 
+         loggerFactory.AddDebug(); 
+         if (env.IsDevelopment()) 
+         { 
+            app.UseDeveloperExceptionPage(); 
+          app.UseDatabaseErrorPage(); 
+          app.UseBrowserLink(); 
+        } 
+        else 
+        { 
+          app.UseExceptionHandler("/Home/Error"); 
+        } 
+         app.UseStaticFiles(); 
+         app.UseIdentity(); 
+         app.UseMvc(routes => 
+        { 
+            routes.MapRoute( 
+              name: "default", 
+              template: 
+              "{controller=Home}/{action=Index}/{id?}"); 
+        }); 
+    } 
+Defining the Home Controller's Actions
+
+    public class HomeController : Controller 
+    { 
+      public IActionResult Index() 
+      { 
+        return View(); 
+      } 
+      public IActionResult About() 
+      { 
+        ViewData["Message"] = "Your application description 
+        page."; 
+        return View(); 
+      } 
+      public IActionResult Contact() 
+      { 
+        ViewData["Message"] = "Your contact page."; 
+        return View(); 
+      } 
+      public IActionResult Error() 
+      { 
+        return View(); 
+      } 
+    } 
+
+Sharing Layouts between Views
+
+    <title>@ViewData["Title"] - My First ASP.NET Core App</title> 
+
+    <environment names="Development"> 
+      <link rel="stylesheet"
+    href="~/lib/bootstrap/dist/css/bootstrap.css" /> 
+      <link rel="stylesheet" href="~/css/site.css" /> 
+    </environment> 
+    <environment names="Staging,Production"> 
+      <link rel="stylesheet" 
+      href="https://ajax.aspnetcdn.com/ajax/ 
+                 bootstrap/3.3.5/css/bootstrap.min.css"  
+        asp-fallback-href="~/lib/bootstrap/dist/css/
+        bootstrap.min.css"  
+        asp-fallback-test-class="sr-only"  
+        asp-fallback-test-property="position"  
+        asp-fallback-test-value="absolute" /> 
+      <link rel="stylesheet"  
+            href="~/css/site.min.css"  
+            asp-append-version="true" /> 
+    </environment> 
+
+Defining a Typed View
+
+
+    <div class="row"> 
+      <div class="col-md-12"> 
+        <h1>Northwind</h1> 
+        <p class="lead">We have had @Model.VisitorCount
+           visitors this month.
+        </p> 
+        <h2>Products</h2> 
+        <div id="newspaper"> 
+          <ul> 
+          @foreach (var item in @Model.Products) 
+          { 
+            <li><a asp-controller="Home"  
+                   asp-action="ProductDetail"  
+                   asp-route-id="@item.ProductID"> 
+                @item.ProductName costs  
+                @item.UnitPrice.Value.ToString("C") 
+            </a></li> 
+          } 
+          </ul> 
+        </div> 
+      </div> 
+    </div> 
+
+
+
+
+Create View Models for Requests
+
+    using System.Collections.Generic; 
+     namespace Packt.CS7 
+    { 
+      public class HomeIndexViewModel 
+      { 
+        public int VisitorCount; 
+        public ICollection<Product> Products { get; set; } 
+      } 
+    } 

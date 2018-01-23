@@ -1,0 +1,12 @@
+F:\_PACKT\CourseWare\Beginning C#\Lessons\Lesson 8\WebCore4\WebCore4\bin\Debug\netcoreapp2.0\WebCore4.deps.json
+F:\_PACKT\CourseWare\Beginning C#\Lessons\Lesson 8\WebCore4\WebCore4\bin\Debug\netcoreapp2.0\WebCore4.runtimeconfig.json
+F:\_PACKT\CourseWare\Beginning C#\Lessons\Lesson 8\WebCore4\WebCore4\bin\Debug\netcoreapp2.0\WebCore4.runtimeconfig.dev.json
+F:\_PACKT\CourseWare\Beginning C#\Lessons\Lesson 8\WebCore4\WebCore4\bin\Debug\netcoreapp2.0\WebCore4.dll
+F:\_PACKT\CourseWare\Beginning C#\Lessons\Lesson 8\WebCore4\WebCore4\bin\Debug\netcoreapp2.0\WebCore4.pdb
+F:\_PACKT\CourseWare\Beginning C#\Lessons\Lesson 8\WebCore4\WebCore4\obj\Debug\netcoreapp2.0\WebCore4.csprojResolveAssemblyReference.cache
+F:\_PACKT\CourseWare\Beginning C#\Lessons\Lesson 8\WebCore4\WebCore4\obj\Debug\netcoreapp2.0\WebCore4.csproj.CoreCompileInputs.cache
+F:\_PACKT\CourseWare\Beginning C#\Lessons\Lesson 8\WebCore4\WebCore4\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+F:\_PACKT\CourseWare\Beginning C#\Lessons\Lesson 8\WebCore4\WebCore4\obj\Debug\netcoreapp2.0\WebCore4.AssemblyInfoInputs.cache
+F:\_PACKT\CourseWare\Beginning C#\Lessons\Lesson 8\WebCore4\WebCore4\obj\Debug\netcoreapp2.0\WebCore4.AssemblyInfo.cs
+F:\_PACKT\CourseWare\Beginning C#\Lessons\Lesson 8\WebCore4\WebCore4\obj\Debug\netcoreapp2.0\WebCore4.dll
+F:\_PACKT\CourseWare\Beginning C#\Lessons\Lesson 8\WebCore4\WebCore4\obj\Debug\netcoreapp2.0\WebCore4.pdb
