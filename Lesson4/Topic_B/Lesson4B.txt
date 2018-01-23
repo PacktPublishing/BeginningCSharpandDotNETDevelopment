@@ -1,0 +1,56 @@
+Exercise: Get the length of a string.
+
+using System;
+using static System.Console;
+
+namespace Ch04_ManipulatingText 
+{ 
+  class Program 
+  { 
+    static void Main(string[] args) 
+    { 
+      string city = "London"; 
+      WriteLine($"{city} is {city.Length} characters long."); 
+ } 
+  } 
+} 
+
+Exercise: Match patterns with regular expressions
+
+
+using System.Text.RegularExpressions; 
+using static System.Console; 
+
+Write("Enter the page number you are in: "); 
+string input = ReadLine(); 
+Regex pageChecker = new Regex(@"\d"); 
+if(pageChecker.IsMatch(input)) 
+{ 
+  WriteLine("Thank you!"); 
+} 
+else 
+{ 
+  WriteLine($"This is not a valid page number: {input}"); 
+} 
+
+
+
+Activity B-1
+
+string xmlCities = "<root>" +
+    "<City>New York</City>" +
+    "<City>Chicago</City>" +
+    "<City>S. Francisco</City>" +
+    "<City>New Orleans</City>" +
+    "<City>Dallas</City>" +
+    "</root>";
+
+string[] cities = xmlCities.Split(new String[] { "<City>", "</City>" }, StringSplitOptions.RemoveEmptyEntries);
+WriteLine("Cities in the xmlCities variable");
+WriteLine("--------------------------------");
+foreach (var city in cities)
+{
+if (city.StartsWith("<")) continue;
+WriteLine(city);
+}
+

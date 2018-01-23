@@ -1,0 +1,65 @@
+Exercise: Work with lists
+
+Step 2: 
+using System; 
+using System.Collections.Generic; 
+using static System.Console; 
+
+Step 3: 
+
+var cities = new List<string>(); 
+cities.Add("London");
+cities.Add("Paris");
+cities.Add("Milan");
+WriteLine("Initial list");
+foreach (string city in cities)
+{
+  WriteLine($"  {city}"); 
+}
+WriteLine($"The first city is {cities[0]}.");
+WriteLine($"The last city is {cities[cities.Count - 1]}.");
+cities.Insert(0, "Sydney");
+WriteLine("After inserting Sydney at index 0");
+foreach (string city in cities)
+{
+  WriteLine($"  {city}"); 
+}
+cities.RemoveAt(1);
+cities.Remove("Milan");
+WriteLine("After removing two cities");
+foreach (string city in cities)
+{
+  WriteLine($"  {city}");
+}
+
+
+
+Exercise: Work with dictionaries.
+
+var keywords = new Dictionary<string, string>(); 
+keywords.Add("int", "32-bit integer data type"); 
+keywords.Add("long", "64-bit integer data type"); 
+keywords.Add("float", "Single precision floating point number"); 
+WriteLine("Keywords and their definitions"); 
+foreach (KeyValuePair<string, string> item in keywords) 
+{ 
+  WriteLine($"  {item.Key}: {item.Value}"); 
+} 
+WriteLine($"The definition of long is {keywords["long"]}"); 
+
+
+Activity C-1
+
+Step 2: 
+
+ var moreKeywords = new Dictionary<string, string>
+{
+    {"int", "32-bit integer data type"}, {"long", "64-bit integer data type"}, {"Date", DateTime.Today.ToString()}
+};
+
+            foreach (KeyValuePair<string, string> item in moreKeywords)
+            {
+                WriteLine($" {item.Key}: {item.Value}");
+            }
+            WriteLine($"The definition of Date is {moreKeywords["Date"]}");
+
