@@ -1,0 +1,11 @@
+C:\Users\Marino\Desktop\Lesson6\bin\Debug\netcoreapp1.1\Ch06_EFCore.deps.json
+C:\Users\Marino\Desktop\Lesson6\bin\Debug\netcoreapp1.1\Ch06_EFCore.runtimeconfig.json
+C:\Users\Marino\Desktop\Lesson6\bin\Debug\netcoreapp1.1\Ch06_EFCore.runtimeconfig.dev.json
+C:\Users\Marino\Desktop\Lesson6\bin\Debug\netcoreapp1.1\Ch06_EFCore.dll
+C:\Users\Marino\Desktop\Lesson6\bin\Debug\netcoreapp1.1\Ch06_EFCore.pdb
+C:\Users\Marino\Desktop\Lesson6\obj\Debug\netcoreapp1.1\Ch06_EFCore.csprojResolveAssemblyReference.cache
+C:\Users\Marino\Desktop\Lesson6\obj\Debug\netcoreapp1.1\Ch06_EFCore.csproj.CoreCompileInputs.cache
+C:\Users\Marino\Desktop\Lesson6\obj\Debug\netcoreapp1.1\Ch06_EFCore.AssemblyInfoInputs.cache
+C:\Users\Marino\Desktop\Lesson6\obj\Debug\netcoreapp1.1\Ch06_EFCore.AssemblyInfo.cs
+C:\Users\Marino\Desktop\Lesson6\obj\Debug\netcoreapp1.1\Ch06_EFCore.dll
+C:\Users\Marino\Desktop\Lesson6\obj\Debug\netcoreapp1.1\Ch06_EFCore.pdb
