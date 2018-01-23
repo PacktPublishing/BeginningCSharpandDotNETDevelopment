@@ -1,0 +1,474 @@
+** Exercise: Create members of the Person class
+
+Step 1:
+var p1 = new Person(); 
+p1.Name = "Bob Smith"; 
+p1.DateOfBirth = new DateTime(1965, 12, 22); 
+WriteLine($"{p1.Name} was born on {p1.DateOfBirth:dddd, d MMMM yyyy}");
+
+Step 3:
+var p2 = new Person { Name = "Alice Jones", DateOfBirth = new DateTime(1998, 3, 17) }; 
+WriteLine($"{p2.Name} was born on {p2.DateOfBirth:d MMM yy}");
+
+** Exercise: Store a value by using the enum keyword
+
+Step 2:
+namespace Packt.CS7 
+{ 
+public enum WondersOfTheAncientWorld 
+{ 
+GreatPyramidOfGiza, 
+HangingGardensOfBabylon, 
+StatueOfZeusAtOlympia, 
+TempleOfArtemisAtEphesus, 
+MausoleumAtHalicarnassus, 
+ColossusOfRhodes, 
+LighthouseOfAlexandria 
+} 
+} 
+
+Step 3:
+public WondersOfTheAncientWorld FavoriteAncientWonder;
+
+Step 4:
+p1.FavoriteAncientWonder = WondersOfTheAncientWorld.StatueOfZeusAtOlympia; 
+WriteLine($"{p1.Name}'s favorite wonder is {p1.FavoriteAncientWonder}");
+
+Step 6:
+namespace Packt.CS7
+{
+  [System.Flags] 
+  public enum WondersOfTheAncientWorld : byte
+  {
+    None = 0,
+    GreatPyramidOfGiza = 1,
+    HangingGardensOfBabylon = 1 << 1,
+    StatueOfZeusAtOlympia = 1 << 2,
+     TempleOfArtemisAtEphesus = 1 << 3,
+     MausoleumAtHalicarnassus = 1 << 4,
+    ColossusOfRhodes = 1 << 5,
+    LighthouseOfAlexandria = 1 << 6
+  }
+}
+
+
+** Exercise: Use the enum keyword
+
+Step 1:
+public WondersOfTheAncientWorld BucketList;
+
+Step 2:
+p1.BucketList = WondersOfTheAncientWorld.HangingGardensOfBabylon | WondersOfTheAncientWorld.MausoleumAtHalicarnassus; 
+// p1.BucketList = (WondersOfTheAncientWorld)18; 
+WriteLine($"{p1.Name}'s bucket list is {p1.BucketList}");
+
+
+** Exercise: Use collections to store multiple values
+
+Step 1:
+using System.Collections.Generic;
+
+Step 2:
+public List<Person> Children = new List<Person>(); 
+
+Step 3:
+p1.Children.Add(new Person()); 
+WriteLine($"{p1.Name} has {p1.Children.Count} children."); 
+
+
+** Making a field static
+namespace Packt.CS7
+{ 
+public class BankAccount
+{ 
+public string AccountName;
+public decimal Balance;
+public static decimal InterestRate;
+} 
+}
+
+
+** Exercise: Make a static field
+
+Step 1:
+
+BankAccount.InterestRate = 0.012M; 
+var ba1 = new BankAccount(); 
+ba1.AccountName = "Mrs. Jones"; 
+ba1.Balance = 2400; 
+WriteLine($"{ba1.AccountName} earned {ba1.Balance * BankAccount.InterestRate:C} interest."); 
+var ba2 = new BankAccount(); 
+ba2.AccountName = "Ms. Gerrier"; 
+ba2.Balance = 98; 
+WriteLine($"{ba2.AccountName} earned {ba2.Balance * BankAccount.InterestRate:C} interest.");
+
+
+** Exercise: Make a field read-only
+
+Step 1:
+//read-only fields 
+public readonly string HomePlanet = "Earth"; 
+
+Step 2:
+WriteLine($"{p1.Name} was born on {p1.HomePlanet}"); 
+
+** Exercise: Initialize fields with constructors 
+
+Step 1:
+
+// read-only fields 
+public readonly string HomePlanet = "Earth"; 
+public readonly DateTime Instantiated;
+// constructors 
+public Person() 
+{ 
+  // set default values for fields 
+  // including read-only fields 
+  Name = "Unknown"; 
+  Instantiated = DateTime.Now; 
+} 
+
+
+Step 2:
+
+var p3 = new Person(); 
+WriteLine($"{p3.Name} was instantiated at  {p3.Instantiated:hh:mm:ss} on {p3.Instantiated:dddd, d MMMM  yyyy}"); 
+
+
+Step 4:
+public Person(string initialName) 
+{ 
+  Name = initialName; 
+  Instantiated = DateTime.Now; 
+}
+
+Step 5:
+var p4 = new Person("Aziz"); 
+WriteLine($"{p4.Name} was instantiated at {p4.Instantiated:hh:mm:ss} on {p4.Instantiated:dddd, d MMMM yyyy}"); 
+
+** Exercise: Write a method
+
+Step 1:
+
+// methods 
+public void WriteToConsole() 
+{ 
+  WriteLine($"{Name} was born on {DateOfBirth:dddd, d MMMM yyyy}"); 
+} 
+
+public string GetOrigin() 
+{ 
+  return $"{Name} was born on {HomePlanet}"; 
+} 
+
+
+Step 2:
+p1.WriteToConsole(); 
+WriteLine(p1.GetOrigin()); 
+
+
+** Exercise: Define methods with tuples
+
+Step 1:
+	
+// the old C# 4 and .NET 4.0 System.Tuple type 
+public Tuple<string, int> GetFruitCS4() 
+{ 
+  return Tuple.Create("Apples", 5); 
+} 
+
+// the new C# 7 syntax and new System.ValueTuple type 
+public (string, int) GetFruitCS7() 
+{ 
+  return ("Apples", 5); 
+}
+
+
+Step 2:
+
+Tuple<string, int> fruit4 = p1.GetFruitCS4(); 
+WriteLine($"There are {fruit4.Item2} {fruit4.Item1}."); 
+
+(string, int) fruit7 = p1.GetFruitCS7(); 
+WriteLine($"{fruit7.Item1}, {fruit7.Item2} there are."); 
+
+** Exercise: Specify the name of the fields
+
+Step 1:
+
+public (string Name, int Number) GetNamedFruit() 
+{ 
+  return (Name: "Apples", Number: 5); 
+}
+
+Step 2:
+var fruitNamed = p1.GetNamedFruit(); 
+WriteLine($"Are there {fruitNamed.Number} {fruitNamed.Name}?"); 
+
+
+** Exercise: Deconstruct tuples into separate variables
+
+Step 1:
+(string fruitName, int fruitNumber) = p1.GetFruitCS7(); 
+WriteLine($"Deconstructed: {fruitName}, {fruitNumber}"); 
+
+
+** Exercise: Pass parameters to methods
+
+Step 1:
+public string SayHello() 
+{ 
+  return $"{Name} says 'Hello!'"; 
+} 
+
+public string SayHelloTo(string name) 
+{ 
+  return $"{Name} says 'Hello {name}!'"; 
+}
+
+
+Step 2:
+WriteLine(p1.SayHello()); 
+WriteLine(p1.SayHelloTo("Emily"));
+
+
+** Exercise: Create a method with optional parameters
+
+Step 1:
+
+public void OptionalParameters(string command = "Run!",  
+double number = 0.0, bool active = true) 
+{ 
+  WriteLine($"command is {command}, number is {number}, active is {active}"); 
+} 
+
+Step 2:
+
+p1.OptionalParameters(); 
+
+Step 5:
+p1.OptionalParameters("Jump!", 98.5);
+
+
+Step 8:
+p1.OptionalParameters(number: 52.7, command: "Hide!");
+
+
+Step 9:
+p1.OptionalParameters("Poke!", active: false);
+
+
+** Exercise: Check how parameters are passed
+Step 1:
+    public void PassingParameters(int x, ref int y, out int z) 
+    { 
+      // out parameters cannot have a default  
+      // AND must be initialized inside the method 
+      z = 99; 
+ 
+      // increment each parameter 
+      x++; 
+      y++; 
+      z++; 
+    } 
+
+Step 2:
+    int a = 10; 
+    int b = 20; 
+    int c = 30; 
+    WriteLine($"Before: a = {a}, b = {b}, c = {c}"); 
+    p1.PassingParameters(a, ref b, out c); 
+    WriteLine($"After: a = {a}, b = {b}, c = {c}"); 
+
+Step 4:
+    // simplified C# 7 syntax for out parameters 
+    int d = 10; 
+    int e = 20; 
+    WriteLine($"Before: d = {d}, e = {e}, f doesn't exist yet!"); 
+    p1.PassingParameters(d, ref e, out int f); 
+    WriteLine($"After: d = {d}, e = {e}, f = {f}"); 
+
+** Exercise: Define read-only properties
+
+Step 1: 
+   // property defined using C# 1 - 5 syntax 
+    public string Origin 
+    { 
+      get 
+      { 
+        return $"{Name} was born on {HomePlanet}"; 
+      } 
+    } 
+    // two properties defined using C# 6+ lambda expression syntax 
+    public string Greeting => $"{Name} says 'Hello!'";  
+ 
+    public int Age => (int)(System.DateTime.Today.Subtract(DateOfBirth).TotalDays / 365.25); 
+
+Step 2:
+    var max = new Person 
+    { 
+      Name = "Max",  
+      DateOfBirth = new DateTime(1972, 1, 27) 
+    }; 
+    WriteLine(max.Origin); 
+    WriteLine(max.Greeting); 
+    WriteLine(max.Age); 
+
+** Exercise: Create a settable property
+
+Step 1:
+public string FavoriteIceCream { get; set; } // auto-syntax
+
+Step 2:
+    private string favoritePrimaryColor; 
+    public string FavoritePrimaryColor 
+    { 
+      get 
+      { 
+        return favoritePrimaryColor; 
+      } 
+      set 
+      { 
+        switch (value.ToLower()) 
+        { 
+          case "red": 
+          case "green": 
+          case "blue": 
+          favoritePrimaryColor = value; 
+          break; 
+          default: 
+          throw new System.ArgumentException($"{value} is not a primary color. Choose from: red, green, blue.");
+        } 
+      } 
+    }
+
+
+Step 3:
+
+max.FavoriteIceCream = "Chocolate Fudge"; 
+WriteLine($"Max's favorite ice-cream flavor is {max.FavoriteIceCream}."); 
+max.FavoritePrimaryColor = "Red"; 
+WriteLine($"Max's favorite primary color is {max.FavoritePrimaryColor}.");
+
+
+Exercise: Define an indexer
+
+Step 1:
+
+ // indexers 
+ public Person this[int index] 
+    { 
+      get 
+      { 
+        return Children[index]; 
+      } 
+      set 
+      { 
+        Children[index] = value; 
+      } 
+    }
+
+
+Step 2:
+    max.Children.Add(new Person { Name = "Charlie" }); 
+    max.Children.Add(new Person { Name = "Ella" }); 
+    WriteLine($"Max's first child is {max.Children[0].Name}"); 
+    WriteLine($"Max's second child is {max.Children[1].Name}"); 
+    WriteLine($"Max's first child is {max[0].Name}"); 
+    WriteLine($"Max's second child is {max[1].Name}"); 
+
+
+** Exercise: Define an event
+
+Step 1:
+
+    // event 
+    public event EventHandler Shout; 
+ 
+    // field 
+    public int AngerLevel; 
+ 
+    // method 
+    public void Poke() 
+    { 
+      AngerLevel++; 
+      if (AngerLevel >= 3) 
+      { 
+        // if something is listening... 
+        if (Shout != null) 
+        { 
+          // ...then raise the event 
+          Shout(this, EventArgs.Empty); 
+        } 
+      } 
+    }
+
+
+Step 7:
+    private static void Harry_Shout(object sender, EventArgs e) 
+    { 
+      Person p = (Person)sender; 
+      WriteLine($"{p.Name} is this angry: {p.AngerLevel}."); 
+    } 
+
+Step 8:
+    harry.Shout += harry_Shout; 
+    harry.Poke(); 
+    harry.Poke(); 
+    harry.Poke(); 
+    harry.Poke();
+
+
+** Activity B-2: 
+
+Step 1:
+
+public class Car
+{
+	public string Brand {get; set;}
+	public byte Speed {get; set;}
+	public void SpeedUp()
+	{
+		this.Speed +=30; 
+		if (this.Speed > 200)
+		{
+			Crash?.Invoke(this, new EventArgs()); 
+		}
+	}
+	public event EventHandler Carsh;
+}
+
+Step 2: 
+
+class Program
+{
+	static Car myCar = new Car(); 
+	static bool carCrash;
+
+	static void Main(string[] args)
+	{
+	myCar.Crash += MyCar_Crash;
+	myCar.Brand = "Ferrari";
+	myCar.Speed = 0;
+	myCar.SpeedUp();
+	string ans = String.Empty;
+	while (ans.ToUpper() != "N")
+	{
+		myCar.SpeedUp();
+		if (carCrash) break;
+		Console.WriteLine($ "My {myCar.Brand} goes at {myCar.Speed} Mi/h"); 
+
+		Console.WriteLine("Do you want to accelerate (Y/N?");
+		ans = Console.ReadLine();
+	}
+}
+
+Step 4: 
+
+private static void MyCar_Crash(object sender, EventArgs e)
+
+{
+	Console.WriteLine($"My {myCar.Brand} has crashed");
+	carCrash = true;
+}
+ 

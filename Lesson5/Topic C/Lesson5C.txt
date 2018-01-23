@@ -1,0 +1,382 @@
+** Exercise: Implement an operator functionality with a method
+
+Step 1:
+public List<Person> Children = new List<Person>();
+public string Name;
+// method to "multiply" 
+public Person Procreate(Person partner) 
+{ 
+var baby = new Person 
+{ 
+Name = $"Baby of {this.Name} and {partner.Name}" 
+}; 
+this.Children.Add(baby); 
+partner.Children.Add(baby); 
+return baby; 
+}
+
+
+Step 2:
+    using Packt.CS7; 
+    using static System.Console; 
+
+
+Step 3:
+    var harry = new Person { Name = "Harry" }; 
+    var mary = new Person { Name = "Mary" }; 
+    var baby1 = harry.Procreate(mary); 
+    WriteLine($"{mary.Name} has {mary.Children.Count} children."); 
+    WriteLine($"{harry.Name} has {harry.Children.Count} children."); 
+    WriteLine($"{harry.Name}'s first child is named \"{harry.Children[0].Name}\".");
+    
+
+Step 5:
+// operator to "multiply" 
+    public static Person operator *(Person p1, Person p2) 
+    { 
+      return p1.Procreate(p2); 
+    } 
+
+
+Step 6:
+    var baby2 = harry * mary; 
+   
+
+** Exercise: Use local function to implement a factorial calculation
+
+Step 1:
+    // method with a local function 
+    public int Factorial(int number) 
+    { 
+      if (number < 0) 
+      { 
+        throw new ArgumentException($"{nameof(number)} cannot be less than zero."); 
+      } 
+ 
+      int localFactorial(int localNumber) 
+      { 
+        if (localNumber < 1) return 1; 
+        return localNumber * localFactorial(localNumber - 1); 
+      } 
+ 
+      return localFactorial(number); 
+    }
+
+Step 2:
+WriteLine($"5! is {harry.Factorial(5)}");
+
+
+** Exercise: Use Icomparable for comparing objects
+
+Step 1:
+
+    Person[] people =  
+    { 
+      new Person { Name = "Simon" },
+      new Person { Name = "Jenny" }, 
+      new Person { Name = "Adam" }, 
+      new Person { Name = "Richard" } 
+    }; 
+ 
+    WriteLine("Initial list of people:"); 
+    foreach (var person in people) 
+    { 
+      WriteLine($"{person.Name}"); 
+    } 
+ 
+    WriteLine("Use Person's sort implementation:"); 
+    Array.Sort(people); 
+    foreach (var person in people) 
+    { 
+      WriteLine($"{person.Name}"); 
+    }
+    
+
+Step 3:
+
+public partial class Person : IComparable<Person>
+
+
+Step 6:
+
+    public int CompareTo(Person other) 
+    { 
+      return Name.CompareTo(other.Name); 
+    } 
+
+
+** Exercise: Define a comparer
+
+Step 1:
+
+    using System.Collections.Generic; 
+    namespace Packt.CS7 
+    { 
+      public class PersonComparer : IComparer<Person> 
+      { 
+        public int Compare(Person x, Person y) 
+        { 
+          int temp = x.Name.Length.CompareTo(y.Name.Length); 
+          if (temp == 0) 
+          { 
+            return x.Name.CompareTo(y.Name); 
+          } 
+          else 
+          { 
+            return temp; 
+          } 
+        } 
+      } 
+    }
+
+
+Step 2:
+
+    WriteLine("Use PersonComparer's sort implementation:"); 
+    Array.Sort(people, new PersonComparer()); 
+    foreach (var person in people) 
+    { 
+      WriteLine($"{person.Name}"); 
+    } 
+
+
+** Exercise: Create a new class that inherits from Person.
+
+
+Step 2:
+
+using System;
+using static System.Console;
+namespace Packt.CS7
+{
+    public class Employee : Person
+    {
+        public DateTime DateOfBirth;
+
+        public void WriteToConsole()
+        {
+            WriteLine($"{Name} was born on {DateOfBirth:dd/MM/yy}");
+        }
+
+
+    }
+}
+
+Step 3: 
+
+Employee e1 = new Employee
+{
+Name = "John Jones",
+DateOfBirth = new DateTime(1990, 7, 28)
+};
+e1.WriteToConsole();
+
+
+** Exercise: Add some employee-specific members to extend the class
+
+Step 1:
+
+public string EmployeeCode { get; set; } 
+public DateTime HireDate { get; set; }
+
+Step 2:
+
+e1.EmployeeCode = "JJ001"; 
+e1.HireDate = new DateTime(2014, 11, 23); 
+WriteLine($"{e1.Name} was hired on {e1.HireDate:dd/MM/yy}");
+
+** Exercise: Redefine the method
+ 
+Step 1:
+
+using System; 
+using static System.Console; 
+namespace Packt.CS6 
+{ 
+public class Employee : Person 
+{ 
+public string EmployeeCode { get; set; } 
+public DateTime HireDate { get; set; } 
+public void WriteToConsole() 
+{ 
+WriteLine($"{Name}'s birth date is {DateOfBirth:dd/
+MM/yy} and hire date was {HireDate:dd/MM/yy}"); 
+} 
+} 
+}
+
+
+** Exercise: Override a method
+
+Step 1:
+WriteLine(e1.ToString());
+
+Step 6:
+
+// overridden methods 
+public override string ToString() 
+{ 
+return $"{Name} is a {base.ToString()}"; 
+}
+
+
+** Exercise: Implement polymorphism
+
+Step 1:
+
+    public override string ToString() 
+    { 
+      return $"{Name}'s code is {EmployeeCode}"; 
+    } 
+
+Step 2: 
+
+    Employee aliceInEmployee = new Employee { Name = "Alice", EmployeeCode = "AA123" }; 
+    Person aliceInPerson = aliceInEmployee; 
+    aliceInEmployee.WriteToConsole(); 
+    aliceInPerson.WriteToConsole(); 
+    WriteLine(aliceInEmployee.ToString()); 
+    WriteLine(aliceInPerson.ToString());
+
+Step 3:
+
+public DateTime DateOfBirth;
+// methods
+public void WriteToConsole()
+{
+WriteLine($"{Name} was born on {DateOfBirth:dddd, d MMMM yyyy}");
+}
+
+
+** Exercise: Inherit from an exception
+
+Step 1:
+
+using System; 
+namespace Packt.CS7 
+{ 
+public class PersonException : Exception 
+{ 
+public PersonException() : base() { } 
+public PersonException(string message) : base(message) { } 
+public PersonException(string message, Exception innerException) : base( message, innerException) { } 
+} 
+} 
+
+
+Step 2:
+    public void TimeTravel(DateTime when) 
+    { 
+      if (when <= DateOfBirth) 
+      { 
+        throw new PersonException("If you travel back in time to a date earlier than your own birth then the universe will explode!"); 
+      } 
+      else 
+      { 
+        WriteLine($"Welcome to {when:yyyy}!"); 
+      } 
+    } 
+
+
+Step 3:
+    try 
+    { 
+      e1.TimeTravel(new DateTime(1999, 12, 31)); 
+      e1.TimeTravel(new DateTime(1950, 12, 25)); 
+    } 
+    catch (PersonException ex) 
+    { 
+      WriteLine(ex.Message); 
+    } 
+
+
+** Exercise: Use static for reusability
+
+Step 1:
+using System.Text.RegularExpressions; 
+namespace Packt.CS7 
+{ 
+public class MyExtensions 
+{ 
+public static bool IsValidEmail(string input) 
+{ 
+// use simple regular expression to check 
+// that the input string is a valid email 
+return Regex.IsMatch(input, @"[a-zA-Z0-9\.-_]+@[a-zA-Z0-9\.-_]+"); 
+} 
+} 
+}
+
+
+Step 2:
+string email1 = "pamela@test.com";
+string email2 = "ian&test.com";
+WriteLine($"{email1} is a valid e-mail address: {MyExtensions.IsValidEmail(email1)}.");
+WriteLine($"{email2} is a valid e-mail address: {MyExtensions.IsValidEmail(email2)}.");
+
+
+** Activity C-1: 
+
+Step 1:
+public class CrashEventArgs : EventArgs
+
+{
+public int ResultingSpeed {get; set;}
+
+public string CrashTime {get; set;}
+
+}
+
+Step 2:
+public void SpeedUp()
+{
+this.Speed += 30;
+if (this.Speed > 200)
+{
+var Crashdata = new CrashEventsArgs()
+{
+CrashTime = DateTime.Now.ToLongTimeString(), ResultingSpeed = Speed + 30	
+};
+
+Step 3:
+private static void MyCar_Crash(object sender, EventArgs e)
+{
+var resultingSpeed = ((CrashEventArgs)e).ResultingSpeed;
+var CrashTime = ((CrashEventArgs)e).CrashTime;
+Console.WriteLine($"My {myCar.Brand } has crashed at {CrashTime}\n");
+Console.WriteLine($"The resulting speed would have been {resultingSpeed} Mi/h\n");
+carCrash = true;
+}
+
+
+** Activity C-2: 
+
+Step 1:
+public static class Extensions
+{
+public static double ToRadians(this double angle)
+{
+return Convert.ToSingle(Math.PI / 180) * angle;
+}
+public static double CubeRoot(this double number)
+{
+return Math.Pow(number, (1.0/3));
+}
+}
+
+
+Step 3:
+static void Main(String[] args)
+{
+double angle = 30.00d;
+double num = 34.00d;
+Console.WriteLine($" {angle} degrees are  {angle.ToRadians()} radians."); 
+Console.WriteLine($" The Cubic Root of {num} is {num.CubeRoot()} \n"); 
+
+
+
+
+
+
+
+

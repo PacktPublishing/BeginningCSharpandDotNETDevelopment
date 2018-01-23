@@ -1,0 +1,14 @@
+C:\Users\Marino\Desktop\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\Marino\Desktop\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\Marino\Desktop\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\Marino\Desktop\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Users\Marino\Desktop\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\Marino\Desktop\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\Users\Marino\Desktop\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csprojResolveAssemblyReference.cache
+F:\_PACKT\CourseWare\Beginning C#\Lessons\Lesson 5\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+F:\_PACKT\CourseWare\Beginning C#\Lessons\Lesson 5\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+F:\_PACKT\CourseWare\Beginning C#\Lessons\Lesson 5\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+F:\_PACKT\CourseWare\Beginning C#\Lessons\Lesson 5\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csprojResolveAssemblyReference.cache
+F:\_PACKT\CourseWare\Beginning C#\Lessons\Lesson 5\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+F:\_PACKT\CourseWare\Beginning C#\Lessons\Lesson 5\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+F:\_PACKT\CourseWare\Beginning C#\Lessons\Lesson 5\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
