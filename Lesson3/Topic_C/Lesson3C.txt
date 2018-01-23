@@ -1,0 +1,120 @@
+** Exercise: Cast an int variable into a double variable
+
+Step 1: 
+
+using static System.Console;
+
+Step 2: 
+
+int a = 10;
+double b = a; // an int can be stored in a double
+WriteLine(b);
+
+Step 3: 
+
+double c = 9.8;
+int d = c; // compiler gives an error for this line
+WriteLine(d);
+		
+
+** Exercise: Cast a double variable into an int variable
+
+Step 2:
+int d = (int)c;
+
+Step 4: 
+long e = 10;
+int f = (int)e;
+WriteLine($"e is {e} and f is {f}");
+e = long.MaxValue;
+f = (int)e;
+WriteLine($"e is {e} and f is {f}");
+
+** Exercise: Use the System.Convert type for conversions
+
+Step 1
+using static System.Convert;
+
+Step 2
+double g = 9.8;
+int h = ToInt32(g);
+WriteLine($"g is {g} and h is {h}");
+
+** Exercise: Check how numbers are rounded in C#
+
+Step 1
+
+Double i = 9.49;
+double j = 9.5;
+double k = 10.49;
+double l = 10.5;
+WriteLine($"i is {i}, ToInt(i) is {ToInt32(i)}");
+WriteLine($"j is {j}, ToInt(j) is {ToInt32(j)}");
+WriteLine($"k is {k}, ToInt(k) is {ToInt32(k)}");
+WriteLine($"l is {l}, ToInt(l) is {ToInt32(l)}");
+
+** Exercise: Convert to the string type
+
+Step 1:
+
+int number = 12;
+WriteLine(number.ToString());
+bool boolean = true;
+WriteLine(boolean.ToString());
+DateTime now = DateTime.Now;
+WriteLine(now.ToString());
+object me = new object();
+WriteLine(me.ToString());
+
+** Exercise: Parse to numbers or dates and times
+
+Step 1: 
+
+int age = int.Parse("27");
+DateTime birthday = DateTime.Parse("4 July 1980");
+WriteLine($"I was born {age} years ago.");
+WriteLine($"My birthday is {birthday}.");
+WriteLine($"My birthday is {birthday:D}.");
+
+Step 3:
+
+int count = int.Parse("abc"); 
+
+Step 5: 
+
+Write("How many eggs are there? ");
+int count;
+string input = Console.ReadLine();
+if (int.TryParse(input, out count))
+{
+WriteLine($"There are {count} eggs.");
+}
+else
+{
+WriteLine("I could not parse the input.");
+}
+
+** Activity- C1
+
+Step 1: 
+
+//Nullable operators
+
+string str1 = null;
+string str2 = str1 ?? "No value"; // str2 is now "No value"
+Console.WriteLine(str2); 
+
+
+Step 3: 
+
+//Null conditional
+
+string str3 = null;
+int? length = str3?.ToString().Length; 
+Console.WriteLine(length); 
+
+Step 5:
+
+//This generates 0, since str3 is null
+int length2 = str3?.ToString().Length ?? 0;
+Console.WriteLine(length2);

@@ -1,0 +1,5 @@
+\\192.168.0.200\Courses\Courseware\C08841\Lesson 03\Code\Ch03_SelectionStatements\bin\Debug\netcoreapp1.1\Ch03_SelectionStatements.deps.json
+\\192.168.0.200\Courses\Courseware\C08841\Lesson 03\Code\Ch03_SelectionStatements\bin\Debug\netcoreapp1.1\Ch03_SelectionStatements.runtimeconfig.json
+\\192.168.0.200\Courses\Courseware\C08841\Lesson 03\Code\Ch03_SelectionStatements\bin\Debug\netcoreapp1.1\Ch03_SelectionStatements.runtimeconfig.dev.json
+\\192.168.0.200\Courses\Courseware\C08841\Lesson 03\Code\Ch03_SelectionStatements\obj\Debug\netcoreapp1.1\Ch03_SelectionStatements.csprojResolveAssemblyReference.cache
+\\192.168.0.200\Courses\Courseware\C08841\Lesson 03\Code\Ch03_SelectionStatements\obj\Debug\netcoreapp1.1\Ch03_SelectionStatements.AssemblyInfo.cs

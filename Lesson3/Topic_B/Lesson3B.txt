@@ -1,0 +1,69 @@
+** Exercise: Implement a simple while statement
+
+Step 1:
+
+int x = 0; 
+while (x < 10) 
+{
+  Console.WriteLine(x); 
+  x++; 
+}
+
+
+** Exercise: Implement a simple do statement
+
+Step 1:
+
+string password = string.Empty; 
+do 
+{ 
+  Console.Write("Enter your password: "); 
+  password = Console.ReadLine(); 
+} while (password != "secret"); 
+Console.WriteLine("Correct!");
+
+
+
+** Exercise: Implement a simple for statement
+
+Step 1:
+
+for (int y = 1; y <= 10; y++) 
+{
+  Console.WriteLine(y); 
+}
+
+
+** Exercise: Implement a simple foreach statement
+
+string[] names = { "Adam", "Barry", "Charlie" }; 
+foreach (string name in names) 
+{
+Console.WriteLine($"{name} has {name.Length} characters."); 
+}
+
+** Activity B-1
+
+Step 1: 
+
+string sentence = "Adam, Barry, and Charlie";
+foreach (char c in sentence)
+{
+	Console.Write(c + "-");
+
+}
+
+Step 3: 
+
+Console.WriteLine("\nNested loops"); 
+
+string[] names = { "Adam", "Barry", "Charlie" };
+foreach (string s in names)
+{
+	foreach (char c in s)
+	{
+		Console.Write(c + "-");
+	}
+}
+
+

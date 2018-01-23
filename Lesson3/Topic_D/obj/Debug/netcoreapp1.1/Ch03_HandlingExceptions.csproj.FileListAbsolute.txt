@@ -1,0 +1,11 @@
+\\192.168.0.200\Courses\Courseware\C08841\Code\Lesson3\Topic_D\bin\Debug\netcoreapp1.1\Ch03_HandlingExceptions.deps.json
+\\192.168.0.200\Courses\Courseware\C08841\Code\Lesson3\Topic_D\bin\Debug\netcoreapp1.1\Ch03_HandlingExceptions.runtimeconfig.json
+\\192.168.0.200\Courses\Courseware\C08841\Code\Lesson3\Topic_D\bin\Debug\netcoreapp1.1\Ch03_HandlingExceptions.runtimeconfig.dev.json
+\\192.168.0.200\Courses\Courseware\C08841\Code\Lesson3\Topic_D\bin\Debug\netcoreapp1.1\Ch03_HandlingExceptions.dll
+\\192.168.0.200\Courses\Courseware\C08841\Code\Lesson3\Topic_D\bin\Debug\netcoreapp1.1\Ch03_HandlingExceptions.pdb
+\\192.168.0.200\Courses\Courseware\C08841\Code\Lesson3\Topic_D\obj\Debug\netcoreapp1.1\Ch03_HandlingExceptions.csprojResolveAssemblyReference.cache
+\\192.168.0.200\Courses\Courseware\C08841\Code\Lesson3\Topic_D\obj\Debug\netcoreapp1.1\Ch03_HandlingExceptions.csproj.CoreCompileInputs.cache
+\\192.168.0.200\Courses\Courseware\C08841\Code\Lesson3\Topic_D\obj\Debug\netcoreapp1.1\Ch03_HandlingExceptions.AssemblyInfoInputs.cache
+\\192.168.0.200\Courses\Courseware\C08841\Code\Lesson3\Topic_D\obj\Debug\netcoreapp1.1\Ch03_HandlingExceptions.AssemblyInfo.cs
+\\192.168.0.200\Courses\Courseware\C08841\Code\Lesson3\Topic_D\obj\Debug\netcoreapp1.1\Ch03_HandlingExceptions.dll
+\\192.168.0.200\Courses\Courseware\C08841\Code\Lesson3\Topic_D\obj\Debug\netcoreapp1.1\Ch03_HandlingExceptions.pdb

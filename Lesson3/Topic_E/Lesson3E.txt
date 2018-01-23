@@ -1,0 +1,62 @@
+** Exercise: Use the checked statement
+
+Step 3:
+
+int x = int.MaxValue - 1; 
+WriteLine(x); 
+x++; 
+WriteLine(x); 
+x++; 
+WriteLine(x); 
+x++; 
+WriteLine(x); 
+
+Step 5:
+
+checked
+{ 
+int x = int.MaxValue - 1; 
+WriteLine(x); 
+x++; 
+WriteLine(x); 
+x++; 
+WriteLine(x); 
+x++; 
+WriteLine(x); 
+}
+
+
+Step 7:
+try
+{ 
+// previous code goes here 
+} 
+catch(OverflowException) 
+{ 
+WriteLine("The code overflowed but I caught the 
+exception."); 
+}
+
+
+** Exercise: Use the unchecked statement
+
+Step 4:
+unchecked
+{ 
+int y = int.MaxValue + 1; 
+WriteLine(y); // this will output -2147483648
+y--;
+WriteLine(y); // this will output 2147483647
+y--;
+WriteLine(y); // this will output 2147483646
+} 
+
+** Activity E-1
+
+int n = int.MaxValue + 1;
+int n2 = unchecked(int.MaxValue + 1);
+int n3 = int.MinValue; 
+
+Console.WriteLine($"Minimum integer: {int.MinValue}, n3: {n3}"); 
+n3--; 
+Console.WriteLine($"Maximum integer: {int.MaxValue}, n3: {n3}"); 
