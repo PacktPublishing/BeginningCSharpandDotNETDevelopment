@@ -1,0 +1,62 @@
+** Exercise: Display the output to the user
+
+Step 1: 
+
+var population = 66_000_000; // 66 million in UK
+var weight = 1.88; // in kilograms
+var price = 4.99M; // in pounds sterling
+var fruit = "Apples"; // strings use double-quotes
+Console.WriteLine($"The UK population is {population}.");
+Console.Write($"The UK population is {population:N0}. ");
+Console.WriteLine($"{weight}kg of {fruit} costs {price:C}.");
+
+** Exercise: Get the user input in a program
+
+Step 1: 
+
+Console.Write("Type your first name and press ENTER: ");
+string firstName = Console.ReadLine();
+Console.Write("Type the page number you are in and press ENTER: ");
+string pg = Console.ReadLine();
+Console.WriteLine($"Hello {firstName}, your page number is {pg}.");
+
+** Reading Arguments and Working with Arrays
+
+using static System.Console;
+namespace Ch02_Arguments
+	{
+	class Program
+ 		{
+		static void Main(string[] args)
+ 			{
+			WriteLine($"There are {args.Length} arguments.");
+ 			}
+ 		}
+ 	}
+
+**Enumerating Arguments 
+
+Step 1: 
+
+WriteLine($"There are {args.Length} arguments.");
+foreach (string arg in args)
+{
+WriteLine(arg);
+}
+
+Step 4:
+
+ForegroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), args[0], true);
+BackgroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), args[1], true);
+
+** Handling Platforms That Do Not Support an API
+
+try
+{
+WindowWidth = int.Parse(args[2]);
+WindowHeight = int.Parse(args[3]);
+}
+catch(PlatformNotSupportedException)
+{
+WriteLine("The current platform does not support changing the size of a console window.");
+}

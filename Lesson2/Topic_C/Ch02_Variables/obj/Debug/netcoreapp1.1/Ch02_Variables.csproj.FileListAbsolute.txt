@@ -1,0 +1,11 @@
+\\192.168.0.200\Courses\Courseware\C08841\Code\Lesson2\Topic_C\Ch02_Variables\bin\Debug\netcoreapp1.1\Ch02_Variables.deps.json
+\\192.168.0.200\Courses\Courseware\C08841\Code\Lesson2\Topic_C\Ch02_Variables\bin\Debug\netcoreapp1.1\Ch02_Variables.runtimeconfig.json
+\\192.168.0.200\Courses\Courseware\C08841\Code\Lesson2\Topic_C\Ch02_Variables\bin\Debug\netcoreapp1.1\Ch02_Variables.runtimeconfig.dev.json
+\\192.168.0.200\Courses\Courseware\C08841\Code\Lesson2\Topic_C\Ch02_Variables\bin\Debug\netcoreapp1.1\Ch02_Variables.dll
+\\192.168.0.200\Courses\Courseware\C08841\Code\Lesson2\Topic_C\Ch02_Variables\bin\Debug\netcoreapp1.1\Ch02_Variables.pdb
+\\192.168.0.200\Courses\Courseware\C08841\Code\Lesson2\Topic_C\Ch02_Variables\obj\Debug\netcoreapp1.1\Ch02_Variables.csprojResolveAssemblyReference.cache
+\\192.168.0.200\Courses\Courseware\C08841\Code\Lesson2\Topic_C\Ch02_Variables\obj\Debug\netcoreapp1.1\Ch02_Variables.csproj.CoreCompileInputs.cache
+\\192.168.0.200\Courses\Courseware\C08841\Code\Lesson2\Topic_C\Ch02_Variables\obj\Debug\netcoreapp1.1\Ch02_Variables.AssemblyInfoInputs.cache
+\\192.168.0.200\Courses\Courseware\C08841\Code\Lesson2\Topic_C\Ch02_Variables\obj\Debug\netcoreapp1.1\Ch02_Variables.AssemblyInfo.cs
+\\192.168.0.200\Courses\Courseware\C08841\Code\Lesson2\Topic_C\Ch02_Variables\obj\Debug\netcoreapp1.1\Ch02_Variables.dll
+\\192.168.0.200\Courses\Courseware\C08841\Code\Lesson2\Topic_C\Ch02_Variables\obj\Debug\netcoreapp1.1\Ch02_Variables.pdb

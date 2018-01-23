@@ -1,0 +1,59 @@
+**Exercise: Write code to explore numbers.
+
+Console.WriteLine($"int uses {sizeof(int)} bytes and can store numbers in the range {int.MinValue:N0} to {int.MaxValue:N0}.");
+Console.WriteLine($"double uses {sizeof(double)} bytes and can store numbers in the range {double.MinValue:N0} to {double.MaxValue:N0}.");
+Console.WriteLine($"decimal uses {sizeof(decimal)} bytes and can store numbers in the range {decimal.MinValue:N0} to {decimal.MaxValue:N0}.");
+
+**Exercise: Compare double and decimal.
+
+Step 1:
+
+double a = 0.1;
+double b = 0.2;
+if (a + b == 0.3)
+{
+Console.WriteLine($"{a} + {b} equals 0.3");
+}
+else
+{
+Console.WriteLine($"{a} + {b} does NOT equal 0.3");
+}
+
+
+Step 3: 
+
+decimal c = 0.1M; // M indicates a decimal literal value
+decimal d = 0.2M;
+if (c + d == 0.3M)
+{
+Console.WriteLine($"{c} + {d} equals 0.3");
+}
+else
+{
+Console.WriteLine($"{c} + {d} does NOT equal 0.3");
+}
+
+**Activity B-1
+
+Step 2: 
+
+int[,] array = new int [3,3];
+Random r = new Random();
+for (int i=0; i<=2; i++)
+{
+	for (int j=0; j<=2; j++)
+	{
+		array[i,j]=r.Next();
+	}
+}
+
+
+Step 6: 
+
+for (int j=0; j<=2; j++)
+{
+	array[i,j]=r.Next();
+	Console.WriteLine(array[i,j]);
+}
+
+
